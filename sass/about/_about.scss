@@ -1,0 +1,48 @@
+@use '../global/global-rules' as *;
+//about
+.about{
+    background-color: $back-color;
+}
+.about .row{
+    .info{
+        margin: auto 0;
+        .image{
+        max-width:300px;
+        margin: 0 auto;
+        }
+    } 
+    .skills .skill{
+        h3{color:$main-color;}
+        div{
+            position: relative;
+            height: 30px;
+            background-color: #ccc;
+            span{
+                position:absolute;
+                height: 100%;
+                background-color: $main-color;
+                left:0;
+                transition: width 1s linear;
+                &::before{
+                    content:'';
+                    position:absolute;
+                    border-width:10px;
+                    border-style: solid;
+                    border-color: #ccc transparent transparent transparent;
+                    right:-10px;
+                    top: -10px;
+                }
+                &::after{
+                    content:attr(data-skill);
+                    position: absolute;
+                    padding: 6px 10px;
+                    background-color: #ccc;
+                    color:#000;
+                    border-radius:5px;
+                    right: -15px;
+                    top: -42px;
+                }
+            }
+        }   
+    }
+} 

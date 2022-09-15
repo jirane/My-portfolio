@@ -1,0 +1,104 @@
+@use '../sass/global/global-rules' as *;
+//start landing
+.landing{
+    background-color:$back-color;
+    // height:calc(100vh - 71px);
+}
+.landing .content{
+    gap:60px;
+    padding: 80px 0;
+    .info{
+
+        p:first-of-type{
+            position: relative;
+            font-size:50px;
+            color:#5e559d;
+            text-transform:capitalize;
+            border:0;
+            span{
+                font-size:55px;
+                font-weight:bolder;
+            }
+            &::after{
+                content:'';
+                position:absolute;
+                width:2px;
+                height:50px;
+                background-color:#3f3a6261;
+                bottom:0;
+                margin-left:10px;
+            }
+        }
+        p:nth-of-type(2){
+            font-weight:500;
+            padding-right: 80px;
+        }
+        .buttons button{
+            font-size: 18px;
+            text-transform:capitalize;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+        }
+        .buttons button:first-of-type{
+            border-color:$main-color;
+            background-color: $main-color;
+            padding:10px 15px;
+            color:#fff;
+            border-radius:10px;
+            margin-right:20px;
+        }
+        .buttons button:nth-of-type(2){
+            border-color:$main-color;
+            background-color:#fff;
+            color:$main-color;
+            padding:10px 15px;
+            border-radius:10px;
+        }
+    }
+    .image{
+        position: relative; 
+        overflow: hidden;
+        img{
+            border-radius:50%;
+        }
+        &::after{
+            content:'';
+            position:absolute;
+            width: 110%;
+            height:110%;
+            border-color:$main-color;
+            border-style:dotted solid dotted solid;
+            border-width:10px;
+            border-radius:50%;
+            animation: move 1.5s linear infinite;
+            right:-50%;
+            top: -20px;
+            margin-left: -10px;
+            translate: (-41%);
+            
+        }
+    }
+}
+
+//keyframes animation
+@keyframes move{
+    from{
+        transform:rotate(0);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+//media sizing
+@media (max-width:767px){
+    .landing .content .row .info{
+        text-align: center;
+        p:nth-of-type(2){
+            padding:0;
+        }
+    }
+    .landing .content .row .image{
+        margin-top:50px;
+    }
+}
+
