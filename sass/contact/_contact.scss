@@ -1,0 +1,65 @@
+// start contact 
+@use '../global/global-rules' as *;
+.contact .background-img{
+    position: relative;
+    background-image:url('../imgs/code.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    width:100%;
+    height: calc(100vh - 62px);
+}
+.contact .background-img::before{
+    content: "";
+    position: absolute;
+    width:100%;
+    height:100%;
+    backdrop-filter: blur(10px);
+}
+.contact .row .content{
+    position:absolute;
+    top:30%;
+    left:50%;
+    transform:translatex(-50%);
+}
+.contact .row .content h3{
+    text-transform: capitalize;
+    font-weight:800;
+    font-size:50px;
+    animation: color 1s linear infinite alternate;
+}
+::placeholder{
+    color:#fff;
+}
+.contact .row .content input,
+.contact .row .content textarea{
+    display: block;
+    margin: 0 auto;
+    background:none;
+    color:#fff;
+    border:0;
+    border-bottom:2px solid $main-color;
+    outline:none;
+}
+@keyframes color{
+    0%{
+        color:#c49944;
+    }
+    100%{
+        color:$main-color;
+    }
+}
+@media (max-width:767px){
+    .contact .row .content p{
+        max-width: 100% !important;
+    }
+    .contact .row .content{
+        input{
+            width:100% !important;
+            }
+        textarea{
+                width:100% !important;
+                height:auto !important;
+                }
+}
+}
